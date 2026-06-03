@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Honfleur';
+    src: url('fonts/Honfleur-Heavy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Honfleur';
+    src: url('fonts/Honfleur-HeavyItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,6 +47,16 @@ html {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.saint-image {
+    width: 210px;        
+    height: 210px;       
+    object-fit: cover;   
+    border-radius: 20px; 
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+    display: block;
+    margin: 20px auto;
 }
 
 /* ===== HERO SECTION ===== */
@@ -102,19 +126,17 @@ html {
     50% { box-shadow: 0 0 80px rgba(0, 188, 212, 0.6); }
 }
 
-.hero h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-    font-weight: 300;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-}
+
 h1 {
-    margin-top: 20px;
+    margin-top: 80px;
+    font-family: 'Honfleur', sans-serif;
+    font-size: 3.5rem; 
+    max-width: 100%;
+    text-align: center;
 }
 
 .hero-quote {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-bottom: 40px;
     font-style: italic;
     opacity: 0.95;
