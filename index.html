@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santo Yohanes - Saint John's Legacy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="saint-illustration">
+                <img src="john.jpg" alt="Santo Yohanes" class="saint-image">
+            </div>
+            <h1>Santo Yohanes Penginjil</h1>
+            <p class="hero-quote">"Sebab kasih kita seharusnya bukan hanya kata-kata atau ucapan lidah, tetapi harus berupa kasih yang sejati, yang dibuktikan melalui tindakan."</p>
+            <button class="cta-button" onclick="document.getElementById('about').scrollIntoView()">Lanjut</button>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Kehidupan</h2>
+            <div class="timeline">
+
+                <div class="timeline-item" onclick="toggleTimeline(this)">
+                    <div class="timeline-year">6 Ma</div>
+                    <div class="timeline-event">Lahir di Bethsaida, Galilea. Murid Yohanes Pembaptis, kemudian dipanggil oleh Yesus untuk menjadi rasul pilihan-Nya dan sahabat terkasih-Nya.</div>
+                </div>
+
+                <div class="timeline-item" onclick="toggleTimeline(this)">
+                    <div class="timeline-year">30-33 AD</div>
+                    <div class="timeline-event">Pelayanan bersama Yesus Kristus. Menyaksikan mukjizat, pengajaran, penyaliban, dan kebangkitan. Bertumbuh dalam hikmat rohani dan pemahaman ilahi.</div>
+                </div>
+
+                <div class="timeline-item" onclick="toggleTimeline(this)">
+                    <div class="timeline-year">33-95 AD</div>
+                    <div class="timeline-event">Memimpin Gereja Yerusalem dengan otoritas aposto. Berpergian untuk menyebarkan Injil, melakukan mukjizat, dan merawat komunitas Kristen awal.</div>
+                </div>
+
+                <div class="timeline-item" onclick="toggleTimeline(this)">
+                    <div class="timeline-year">95 AD</div>
+                    <div class="timeline-event">Dibuang ke Patmos oleh otoritas Romawi. Menulis Kitab Wahyu, sebuah visi spiritual mendalam tentang kemuliaan Kristus dan kemenangan ilahi.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEACHINGS SECTION -->
+    <section class="teachings" id="teachings">
+        <div class="container">
+            <h2 class="section-title">Pengajaran Dan Pesan</h2>
+            <div class="teachings-grid">
+                <div class="teaching-card" onclick="toggleTeaching(this)">
+                    <h3>Cinta Ilahi</h3>
+                    <div class="teaching-content">
+                        Yohanes menekankan kasih Allah yang tanpa syarat kepada umat manusia. "Karena Allah begitu mengasihi dunia sehingga Ia memberikan Anak-Nya yang tunggal, supaya barangsiapa percaya kepada-Nya tidak binasa, melainkan mempunyai hidup yang kekal." Kasih adalah dasar dari semua iman Kristen.
+                    </div>
+                    <span class="read-more">Read more →</span>
+                </div>
+                <div class="teaching-card" onclick="toggleTeaching(this)">
+                    <h3>Cahaya Kebenaran</h3>
+                    <div class="teaching-content">
+                        "I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life." Yohanes mengungkapkan Yesus sebagai cahaya abadi yang membimbing umat manusia menuju keselamatan dan kebangkitan spiritual.
+                    </div>
+                    <span class="read-more">Read more →</span>
+                </div>
+                <div class="teaching-card" onclick="toggleTeaching(this)">
+                    <h3>Air Hidup</h3>
+                    <div class="teaching-content">
+                        Yohanes menawarkan "air hidup" kepada mereka yang ingin memenuhi kebutuhan spiritual. Ini mewakili kehidupan abadi dan Roh Kudus yang mengalir di dalam para penganut, memadamkan keinginan terdalam jiwa manusia.
+                    </div>
+                    <span class="read-more">Read more →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Moments Suci</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <div class="gallery-overlay">Injil menurut Yohanes</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <div class="gallery-overlay">Makan Malam Terakhir</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <div class="gallery-overlay">Turunnya Roh Kudus</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <div class="gallery-overlay">Pulau Patmos</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">                   
+                    <div class="gallery-overlay">Resurrection Glory</div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <div class="gallery-overlay">Heavenly Vision</div>
+                </div>
+            </div>
+        </div>
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+                <div id="lightbox-image" style="font-size: 4em; text-align: center; padding: 40px; background: linear-gradient(135deg, #6B21A8, #00BCD4); border-radius: 10px; color: white;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY SECTION -->
+    <section class="journey" id="journey">
+        <div class="container">
+            <h2 class="section-title">Perjalanan Spiritual</h2>
+            <div class="journey-timeline">
+                <div class="journey-milestone" data-scroll="true">
+                    <div class="milestone-icon"></div>
+                    <div class="milestone-content">
+                        <h3>Dipanggil Oleh Yesus Kristus</h3>
+                        <p>Yohanes dipanggil secara langsung oleh Yesus untuk menjadi murid-Nya. Pertemuan yang mengubah hidup ini mengubah arah hidupnya selamanya, membawanya untuk meninggalkan segala sesuatu dan mengikuti Master.</p>
+                    </div>
+                </div>
+                <div class="journey-milestone" data-scroll="true">
+                    <div class="milestone-icon"></div>
+                    <div class="milestone-content">
+                        <h3>Menyaksikan Keajaiban</h3>
+                        <p>Sebagai salah satu murid yang paling dekat, Yohanes menyaksikan keajaiban luar biasa—pemberian makan kelima ribu orang, kebangkitan Lazarus, berjalan di atas air—which deepened his understanding of divine power.</p>
+                    </div>
+                </div>
+                <div class="journey-milestone" data-scroll="true">
+                    <div class="milestone-icon"></div>
+                    <div class="milestone-content">
+                        <h3>Penyaliban</h3>
+                        <p>Yohanes berdiri di kaki salib bersama Maria, ibu Yesus. Moment yang mendalam ini dari penderitaan dan pengorbanan menjadi landasan dari pemahamannya tentang cinta pembebasan.</p>
+                    </div>
+                </div>
+                <div class="journey-milestone" data-scroll="true">
+                    <div class="milestone-icon"></div>
+                    <div class="milestone-content">
+                        <h3>Kebangkitan & Kenaikan</h3>
+                        <p>Yohanes adalah salah satu dari yang pertama mengenali Yesus yang telah bangkit. Pengalaman ini memperkuat imannya dan memberinya dasar spiritual untuk memimpin Gereja awal dengan keyakinan yang tak goyah.</p>
+                    </div>
+                </div>
+                <div class="journey-milestone" data-scroll="true">
+                    <div class="milestone-icon"></div>
+                    <div class="milestone-content">
+                        <h3>Pantekosta & Kepemimpinan</h3>
+                        <p>Pada hari Pentakosta, Yohanes menerima Roh Kudus dan menjadi pilar gereja Yerusalem. Ia melayani, mengajar, dan memimpin dengan otoritas kerasulan dan kepedulian pastoral yang penuh belas kasih.</p>
+                    </div>
+                </div>
+                <div class="journey-milestone" data-scroll="true">
+                    <div class="milestone-icon"></div>
+                    <div class="milestone-content">
+                        <h3>Revelasi Ilahi</h3>
+                        <p>Dikeksekusi di Patmos, Yohanes menerima Wahyu mendalam tentang kemuliaan Kristus dan kemenangan akhir kerajaan Tuhan, yang dia catat dalam Kitab Wahyu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- PRAYER SECTION -->
+    <section class="prayer" id="prayer">
+        <div class="container">
+            <h2 class="section-title">Doa & Refleksi</h2>
+            <div class="prayer-grid">
+                <div class="prayer-card">
+                    <h3>Prayer of Saint John</h3>
+                    <p class="prayer-text">"Most loving Father, I trust in Your infinite compassion. Help me to love as John loved—with a heart devoted to serving others and spreading the light of Christ. Grant me the wisdom to understand Your truth and the courage to live it faithfully. May I be a vessel of Your love in this world. Amen."</p>
+                </div>
+                <div class="prayer-card">
+                    <h3>Daily Reflection</h3>
+                    <p class="prayer-text">"In the quiet of this moment, reflect on John's profound insight: 'In the beginning was the Word, and the Word was with God, and the Word was God.' Consider how God's eternal love surrounds you. What does it mean to live in that love today?"</p>
+                </div>
+            </div>
+            <div style="margin-top: 40px;">
+                <div class="daily-quote">
+                    <p>"I have come that they may have life, and have it to the full."</p>
+                    <div class="daily-quote-author">— John 10:10</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Santo Yohanes</h4>
+                    <p>Saint John the Evangelist, beloved disciple of Jesus Christ, offers eternal wisdom for spiritual seekers and believers worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <p><a href="#">Gospel of John</a></p>
+                    <p><a href="#">Book of Revelation</a></p>
+                    <p><a href="#">Epistles of John</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <p>📧 Email: communion@santoyohanes.org</p>
+                    <p>📍 Location: Holy Sanctuary</p>
+                    <div class="social-links">
+                        <div class="social-icon">f</div>
+                        <div class="social-icon">t</div>
+                        <div class="social-icon">🔗</div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Santo Yohanes Legacy. Dedicated to spreading faith, hope, and divine love. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
