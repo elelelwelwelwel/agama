@@ -177,6 +177,7 @@ h1 {
     margin-bottom: 60px;
     color: var(--primary);
     position: relative;
+    font-family: 'Honfleur', sans-serif;
 }
 
 .section-title::after {
@@ -395,6 +396,38 @@ h1 {
     z-index: 1000;
     align-items: center;
     justify-content: center;
+}
+
+/* Kontainer pembungkus foto dan deskripsi di dalam pop-up */
+.lightbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90vw; /* Memastikan tidak melebihi lebar layar HP/Laptop */
+    max-height: 80vh; /* Memastikan tidak melebihi tinggi layar */
+    background: #1e1b4b; /* Warna background gelap yang elegan untuk teks */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Gambar menyesuaikan rasio aslinya (kotak/persegi panjang) secara fleksibel */
+.responsive-lightbox-img {
+    max-width: 100%;
+    max-height: 60vh; /* Memberikan sisa ruang 20vh di bawah untuk deskripsi */
+    object-fit: contain; /* Gambar tidak akan gepeng atau terpotong */
+    display: block;
+}
+
+/* Gaya teks deskripsi di bawah gambar */
+.lightbox-description {
+    padding: 20px;
+    color: #f3f4f6;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .lightbox.active {
