@@ -343,22 +343,26 @@ h1 {
 
 .gallery-item {
     position: relative;
+    border-radius: 12px;
     height: 250px;
-    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
     box-shadow: var(--shadow);
-    transition: all 0.4s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 3em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+.gallery-item:nth-child(1) { background-image: url('images/gospel.jpg'); }
+.gallery-item:nth-child(2) { background-image: url('images/last-supper.jpg'); }
+.gallery-item:nth-child(3) { background-image: url('images/pentecost.jpg'); }
+.gallery-item:nth-child(4) { background-image: url('images/patmos.jpg'); }
+.gallery-item:nth-child(5) { background-image: url('images/ressurection.jpg'); }
+.gallery-item:nth-child(6) { background-image: url('images/vision.jpg'); }
+
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.02);
     box-shadow: var(--shadow-lg);
 }
 
@@ -368,21 +372,32 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(107, 33, 168, 0.85); 
+    background: rgba(7, 121, 147, 0.9); /* Menggunakan warna aksen sekundermu dengan opasitas */
     display: flex;
-    align-items: center;       
-    justify-content: center;    
-    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Awalnya tersembunyi */
     transition: opacity 0.3s ease;
     color: white;
-    font-weight: 600;
-    font-size: 1.6rem;         
-    text-align: center;         
-    padding: 15px;             
+    padding: 20px;
+    text-align: center;          
 }
 
 .gallery-item:hover .gallery-overlay {
     opacity: 1;
+}
+
+.gallery-overlay h3 {
+    font-family: 'Honfleur', sans-serif; /* Menggunakan font Honfleur kebanggaanmu */
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.gallery-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 .lightbox {
