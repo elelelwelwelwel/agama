@@ -13,12 +13,49 @@ function toggleTeaching(element) {
     element.classList.toggle('active');
 }
 
-// Gallery images array
-const galleryImages = ['📖', '⛪', '🕊️', '🏔️', '✝️', '👑'];
+// Menyimpan path foto dan deskripsi kustom untuk setiap momen
+const galleryData = [
+    {
+        src: 'images/gospel.jpg',
+        desc: 'Injil menurut Yohanes menekankan keilahian Yesus Kristus sebagai "Firman yang telah menjadi manusia".'
+    },
+    {
+        src: 'images/last-supper.jpg',
+        desc: 'Momen sakral Perjamuan Malam Terakhir, di mana Yohanes bersandar dekat dengan Yesus sebagai murid yang dikasihi.'
+    },
+    {
+        src: 'images/pentecost.jpg',
+        desc: 'Peristiwa turunnya Roh Kudus dalam rupa lidah-lidah api yang meneguhkan para rasul untuk mulai mewartakan Injil.'
+    },
+    {
+        src: 'images/patmos.jpg',
+        desc: 'Pulau Patmos, tempat di mana Santo Yohanes diasingkan dan menerima penglihatan ilahi yang dicatat dalam Kitab Wahyu.'
+    },
+    {
+        src: 'images/ressurection.jpg',
+        desc: 'Sukacita Kebangkitan: Yohanes bersama Petrus berlari menuju kubur yang kosong dan melihat kain kafan yang terlipat.'
+    },
+    {
+        src: 'images/vision.jpg',
+        desc: 'Penglihatan Surgawi yang agung tentang Yerusalem Baru dan takhta kemuliaan Allah seperti yang tertulis di akhir Zaman.'
+    }
+];
 
-// Open lightbox
+// Fungsi untuk membuka Lightbox (Pop-up)
 function openLightbox(index) {
-    document.getElementById('lightbox-image').textContent = galleryImages[index];
+    const lightboxImageContainer = document.getElementById('lightbox-image');
+    const item = galleryData[index];
+    
+    // HTML dinamis: Menyisipkan Gambar + Deskripsi di bawahnya
+    lightboxImageContainer.innerHTML = `
+        <div class="lightbox-wrapper">
+            <img src="${item.src}" class="responsive-lightbox-img" alt="Momen Suci">
+            <div class="lightbox-description">
+                <p>${item.desc}</p>
+            </div>
+        </div>
+    `;
+    
     document.getElementById('lightbox').classList.add('active');
 }
 

@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Honfleur';
+    src: url('fonts/Honfleur-Heavy.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Honfleur';
+    src: url('fonts/Honfleur-HeavyItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -33,6 +47,16 @@ html {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.saint-image {
+    width: 210px;        
+    height: 210px;       
+    object-fit: cover;   
+    border-radius: 20px; 
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+    display: block;
+    margin: 20px auto;
 }
 
 /* ===== HERO SECTION ===== */
@@ -88,13 +112,13 @@ html {
     height: 120px;
     margin: 0 auto 30px;
     background: linear-gradient(135deg, var(--accent), #00ACC1);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 60px;
     box-shadow: 0 0 60px rgba(0, 188, 212, 0.4);
     animation: pulse 3s ease-in-out infinite;
+    border-radius: 50%;
 }
 
 @keyframes pulse {
@@ -102,19 +126,17 @@ html {
     50% { box-shadow: 0 0 80px rgba(0, 188, 212, 0.6); }
 }
 
-.hero h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-    font-weight: 300;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-}
+
 h1 {
-    margin-top: 20px;
+    margin-top: 80px;
+    font-family: 'Honfleur', sans-serif;
+    font-size: 3.5rem; 
+    max-width: 100%;
+    text-align: center;
 }
 
 .hero-quote {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin-bottom: 40px;
     font-style: italic;
     opacity: 0.95;
@@ -155,6 +177,7 @@ h1 {
     margin-bottom: 60px;
     color: var(--primary);
     position: relative;
+    font-family: 'Honfleur', sans-serif;
 }
 
 .section-title::after {
@@ -345,14 +368,17 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(107, 33, 168, 0.7);
+    background: rgba(107, 33, 168, 0.85); 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center;       
+    justify-content: center;    
     opacity: 0;
     transition: opacity 0.3s ease;
     color: white;
     font-weight: 600;
+    font-size: 1.6rem;         
+    text-align: center;         
+    padding: 15px;             
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -370,6 +396,38 @@ h1 {
     z-index: 1000;
     align-items: center;
     justify-content: center;
+}
+
+/* Kontainer pembungkus foto dan deskripsi di dalam pop-up */
+.lightbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90vw; /* Memastikan tidak melebihi lebar layar HP/Laptop */
+    max-height: 80vh; /* Memastikan tidak melebihi tinggi layar */
+    background: #1e1b4b; /* Warna background gelap yang elegan untuk teks */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Gambar menyesuaikan rasio aslinya (kotak/persegi panjang) secara fleksibel */
+.responsive-lightbox-img {
+    max-width: 100%;
+    max-height: 60vh; /* Memberikan sisa ruang 20vh di bawah untuk deskripsi */
+    object-fit: contain; /* Gambar tidak akan gepeng atau terpotong */
+    display: block;
+}
+
+/* Gaya teks deskripsi di bawah gambar */
+.lightbox-description {
+    padding: 20px;
+    color: #f3f4f6;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .lightbox.active {
