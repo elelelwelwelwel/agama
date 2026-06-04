@@ -1,8 +1,3 @@
-/* ============================================
-   SANTO YOHANES WEBSITE - JAVASCRIPT
-   Interactive functionality and animations
-   ============================================ */
-
 // Toggle timeline items
 function toggleTimeline(element) {
     element.classList.toggle('expanded');
@@ -79,18 +74,6 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Select quiz option
-function selectOption(element, questionIndex) {
-    const parent = element.parentElement;
-    parent.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
-    element.classList.add('selected');
-}
-
-// Submit quiz
-function submitQuiz() {
-    document.getElementById('achievement').classList.add('show');
-    document.getElementById('submitBtn').disabled = true;
-}
 
 // Scroll animation for journey section
 const observerOptions = {
